@@ -25,6 +25,29 @@ await Share.share({
 });
 ```
 
+## Register plugin in Android
+
+Go to `android/app/src/main/java/MainActivity.java` and register the plugin
+
+```java
+package ooo.your_app.app;
+
+import android.os.Bundle;
+
+import com.getcapacitor.BridgeActivity;
+
+import java.util.ArrayList;
+
+public class MainActivity extends BridgeActivity {
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // ...Other plugins
+        registerPlugin(com.capacitorjs.plugins.share.SharePlugin.class);
+    }
+}
+```
+
 Each platform uses a different set of fields, but you should supply them all.
 
 ## API
